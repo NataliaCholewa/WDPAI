@@ -1,24 +1,156 @@
+/* General Styles */
 body {
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Light background for contrast */
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(180deg, #EFEFF5 0%, #EFEFF5 100%) 0% 0% no-repeat padding-box;
-
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    padding: 2em;
+    max-width: 1200px; /* Add a max-width to limit the container's width */
+    margin: 0 auto; /* Center the container horizontally */
+    box-sizing: border-box; /* Ensure padding is included in the element’s width */
+}
+/* Logo Section */
+.logo {
+    text-align: center;
+    margin-bottom: 2em;
 }
 
-.logo {
-    width: 50%;
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em; /* Slightly reduce gap for smaller screens */
     text-align: center;
 }
 
-.login-container {
-    width: 50%;
 
+.logo img {
+    max-width: 80px; /* Adjust size of logo */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Prevent inline spacing issues */
+}
+
+.app-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5C456F; /* Match theme color */
+    font-family: Arial, sans-serif;
+    line-height: 1; /* Align vertically with the logo */
+    margin: 0; /* Remove any default margins */
+    display: flex;
+    align-items: center; /* Ensure perfect vertical alignment */
+}
+
+/* Main Content Section */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2em;
+    width: 100%;
+     max-width: 1100px; /* Constrain width for large screens */
+    padding: 1em; /* Add padding for breathing room */
+    box-sizing: border-box;
+}
+
+/* Login Form Section */
+.login-container {
+    flex: 1;
+    width: 100%; /* Ensure login form width is responsive */
+    max-width: 500px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 2em;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 1em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    background-color: #5C456F;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4C375A;
+}
+
+/* Introduction Section */
+.intro {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    padding: 1em;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro h1 {
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    color: #5C456F;
+}
+
+.intro p {
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    .intro, .login-container {
+        width: 90%;
+        max-width: 500px;
+        margin-bottom: 2em;
+        text-align: center;
+    }
+    .container {
+        padding: 1em; /* Add padding for mobile */
+    }
+
+    @media only screen and (max-width: 480px) {
+        .intro, .login-container {
+            width: 100%; /* Make the sections take the full width of the container */
+            padding: 1em; /* Reduce padding slightly for smaller screens */
+        }
+    
+        .form {
+            padding: 1.5em; /* Reduce form padding for very small screens */
+        }
 }

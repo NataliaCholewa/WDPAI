@@ -1,22 +1,44 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>LOGIN PAGE</title>
+    <title>Login Page</title>
 </head>
 
-<body> <!-- struktura panelu logowania -->
+<body>
 
     <div class="container">
+        <!-- Logo Section -->
         <div class="logo">
-            <img src="../img/logo.svg">    <!-- znalezc ladniejsze! -->
-        
+            <div class="logo-container">
+                <img src="../img/logo.svg" alt="FridgeBuddy Logo">
+                <span class="app-name">FridgeBuddy</span>
+            </div>
         </div>
-        <div class="login-container" >
-            <form>
-                <input name="email" type="text" placeholder="email@email.com">
-                <input name="password" type="password" placeholder="password">
-                <button>LOGIN</button>
-            </form>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Login Form Section -->
+            <div class="login-container">
+                <form>
+                    <input name="email" type="text" placeholder="Email">
+                    <input name="password" type="password" placeholder="Password">
+                    <button>LOGIN</button>
+                </form>
+            </div>
+
+            <!-- Introduction Section -->
+            <div class="intro">
+                <h1>ABOUT FRIDGEBUDDY</h1>
+                <p>
+                    Our app was designed to help you keep track of items in your fridge and their expiration dates, 
+                    so you don’t have to worry about wasting food anymore.
+                </p>
+            </div>
         </div>
     </div>
+
 </body>
+</html>
