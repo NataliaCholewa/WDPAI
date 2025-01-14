@@ -1,0 +1,56 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.categories > .category {
+    border-radius: 15px; /* Zaokrąglone rogi */
+    height: 400px; /* Wysokość kontenera kategorii */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Ukrywa nadmiar obrazka i treści */
+    position: relative; /* Ustawienie pozycji elementów w środku */
+}
+
+.category-fruits {
+    background-color: #f8d7a1; /* Kolor dla owoców */
+}
+
+.category-vegetables {
+    background-color: #c8e6c9; /* Kolor dla warzyw */
+}
+
+.category-protein {
+    background-color: #ffcccb; /* Kolor dla białka */
+}
+
+.category-others {
+    background-color: #d1c4e9; /* Kolor dla innych */
+}
+
+.categories>.category>img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+    border-radius: 15px 15px 0 0;
+}
+
+.categories > div > .category-name {
+    padding: 10px;
+    text-align: center; /* Wyrównanie tekstu na środku */
+    position: absolute;
+    bottom: 0; /* Przypięcie do dołu kontenera */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ciemne tło dla czytelności tekstu */
+}
+
+.categories > div > .category-name h2 {
+    margin: 0; /* Usuwamy marginesy */
+    font-size: 18px; /* Rozmiar czcionki */
+    color: white; /* Kolor tekstu */
+    font-family: 'Arial', sans-serif;
+}
