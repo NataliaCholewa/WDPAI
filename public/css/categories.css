@@ -54,3 +54,14 @@ section {
     color: white; /* Kolor tekstu */
     font-family: 'Arial', sans-serif;
 }
+
+section.list-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list-form > form {
+    display: flex;
+    flex-direction: column;
+}

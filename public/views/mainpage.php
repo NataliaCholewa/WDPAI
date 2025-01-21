@@ -26,6 +26,15 @@
                     <i class="fa-solid fa-plus"></i>
                     <a href="#" class="button">add item</a> <!-- poki co puste przekierowanie, zmienic -->
                 </li>
+                 <li>
+                     <i class="fa-solid fa-plus"></i>  <!-- zmienic ikonke -->
+                     <a href="#" class="button">add grocery list</a> <!-- upload pliku txt dodac -->
+                 </li>
+                 <li>
+                     <i class="fa-solid fa-cart-shopping"></i> <!-- znalezc ikonke -->
+                     <a href="#" class="button">grocery lists</a> <!-- poki co puste przekierowanie, zmienic -->
+                 </li>
+
                 <li>
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <a href="#" class="button">log out</a> <!-- poki co puste przekierowanie, zmienic -->
