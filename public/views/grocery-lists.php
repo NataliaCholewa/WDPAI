@@ -43,36 +43,29 @@
 
     </nav>
     <main>
-        <header>
 
 
-            <div class="search-bar">
-                <form>
-                    <input placeholder="search product">
-                </form>
 
-        </header>
+               <!-- tu bedzie lista zuploadowanych plikow txt przez uzytkownika -->
+                                                <!-- sprawdzic czy git kod -->
 
-
-        <section class="list-form">
-            <h1>UPLOAD</h1>
-            <form action="addList" method="POST" ENCTYPE="multipart/form-data">
+        <section class="grocery-lists">
+            <h1>Your Grocery Lists</h1>
+            <ul>
                 <?php
-                if(isset($messages)) {
-                        foreach ($messages as $message) {
-                            echo $message;
-                        }
+
+
+                if (isset($files)) {
+                    foreach ($files as $file) {
+                        echo "<li><a href='public/uploads/$file'>$file</a></li>";
                     }
+                } else {
+                    echo "<p>No grocery lists uploaded yet.</p>";                        // nie dziala ten else naprawic
+                }
                 ?>
-                <input name="title" type="text" placeholder="title">
-                <textarea name="description" rows="5" placeholder="description"></textarea>
-
-                <input type="file" name="file">
-                <button type="submit">send</button>
-            </form>
-
-
+            </ul>
         </section>
+
     </main>
 
 </div>
