@@ -1,6 +1,12 @@
 <?php
 
-// require_once "config.php";
+require_once "/app/vendor/autoload.php";
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable('/app');
+$dotenv->safeLoad();
+
 
 class Database {
     private $username;
@@ -11,18 +17,22 @@ class Database {
 
     public function __construct()
     {
-        $this->username = getenv('DB_USER');
-        $this->password = getenv('DB_PASSWORD');
-        $this->host = getenv('DB_HOST');
-        $this->database = getenv('DB_NAME');
-        $this->port = getenv('DB_PORT'); // Add port
+        $this->username = $_ENV['DB_USER'] ?? getenv('DB_USER');
+        $this->password = $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD');
+        $this->host = $_ENV['DB_HOST'] ?? getenv('DB_HOST');
+        $this->database = $_ENV['DB_NAME'] ?? getenv('DB_NAME');
+        $this->port = $_ENV['DB_PORT'] ?? getenv('DB_PORT');
+
     }
 
     public function connect()
     {
+
+
+
         try {
             $conn = new PDO(
-                "pgsql:host=$this->host;port=$this->port;dbname=$this->database",
+                "pgsql:host={$this->host};port={$this->port};dbname={$this->database}",
                 $this->username,
                 $this->password,
                 [
