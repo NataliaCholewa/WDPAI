@@ -16,55 +16,40 @@
 <div class="base-container">
     <nav>
         <img src="public/img/logo.svg" alt="FridgeBuddy Logo">
-        <!-- menu: lista -->
         <ul>
-            <li>
-                <i class="fa-regular fa-user"></i>
-                <a href="#" class="button">your profile</a> <!-- poki co puste przekierowanie, zmienic -->
-            </li>
-            <li>
-                <i class="fa-solid fa-plus"></i>
-                <a href="#" class="button">add item</a> <!-- poki co puste przekierowanie, zmienic -->
-            </li>
-            <li>
-                <i class="fa-solid fa-plus"></i>  <!-- zmienic ikonke -->
-                <a href="#" class="button">add grocery list</a> <!-- upload pliku txt dodac -->
-            </li>
-            <li>
-                <i class="fa-solid fa-cart-shopping"></i> <!-- znalezc ikonke -->
-                <a href="#" class="button">grocery lists</a> <!-- poki co puste przekierowanie, zmienic -->
-            </li>
-
-            <li>
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <a href="#" class="button">log out</a> <!-- poki co puste przekierowanie, zmienic -->
-            </li>
+            <li><i class="fa-solid fa-plus"></i> <a href="addProductForm" class="button">add item</a></li>
+            <li><i class="fa-solid fa-plus"></i><a href="addList" class="button">add grocery list</a></li>
+            <li><i class="fa-solid fa-cart-shopping"></i> <a href="groceryLists" class="button">grocery lists</a></li>
+            <li><i class="fa-solid fa-right-from-bracket"></i> <a href="logout" class="button">log out</a></li>
         </ul>
-
     </nav>
     <main>
 
 
-
-               <!-- tu bedzie lista zuploadowanych plikow txt przez uzytkownika -->
-                                                <!-- sprawdzic czy git kod -->
-
         <section class="grocery-lists">
             <h1>Your Grocery Lists</h1>
-            <ul>
-                <?php
 
-
-                if (isset($files)) {
-                    foreach ($files as $file) {
-                        echo "<li><a href='public/uploads/$file'>$file</a></li>";
-                    }
-                } else {
-                    echo "<p>No grocery lists uploaded yet.</p>";                        // nie dziala ten else naprawic
-                }
-                ?>
-            </ul>
+            <div class="list-wrapper">
+                <br><br><br> <!-- Dodane entery -->
+                <?php if (!empty($files)): ?>
+                    <ul class="list-container">
+                        <?php foreach ($files as $file): ?>
+                            <li class="list-item">
+                                <i class="fa-solid fa-file-alt"></i>
+                                <a href="public/uploads/<?= htmlspecialchars($file) ?>" class="list-link"><?= htmlspecialchars($file) ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php else: ?>
+                    <p class="no-lists"><i class="fa-solid fa-exclamation-circle"></i> No grocery lists uploaded yet.</p>
+                <?php endif; ?>
+            </div>
         </section>
+
+
+
+
+
 
     </main>
 

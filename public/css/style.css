@@ -149,7 +149,7 @@ button:hover {
             width: 100%; /* Make the sections take the full width of the container */
             padding: 1em; /* Reduce padding slightly for smaller screens */
         }
-    
+
         .form.login {
             padding: 1.5em; /* Reduce form padding for very small screens */
         }
@@ -187,7 +187,7 @@ nav > img {
 
 a {
     text-decoration: none; /* nie ma podkreslenia przy odwiedzonych stronach */
-    display: inline-block; 
+    display: inline-block;
     line-height: 2em;
 }
 
@@ -286,3 +286,270 @@ header {
     box-sizing: border-box;
 
 }
+
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamiczny układ */
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+
+.expiration-date {
+    font-weight: bold;
+}
+
+
+.category-header {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #E0E0E0;
+}
+
+
+.category-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Roboto', Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
+.grocery-lists {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.grocery-lists h1 {
+    font-size: 26px;
+    color: #5C456F;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.list-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.list-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.list-item {
+    background: #f7f7f7;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 400px;
+    justify-content: flex-start;
+}
+
+
+.list-item:hover {
+    background: #e2dff2;
+    transform: translateY(-3px);
+}
+
+
+.list-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #5C456F;
+    font-weight: bold;
+}
+
+
+.list-item i {
+    color: #5C456F;
+    font-size: 20px;
+}
+
+
+.no-lists {
+    font-size: 18px;
+    color: #a33;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
+    .base-container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+
+    nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    ul li {
+        padding: 5px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 5px 8px;
+        text-align: center;
+    }
+
+    nav img {
+        width: 50px;
+    }
+
+
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .category img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container, .login-container, .list-form, .grocery-lists {
+        width: 100%;
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    input, button {
+        width: 100%;
+    }
+
+
+    .grocery-lists h1 {
+        font-size: 22px;
+    }
+
+    .list-item {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+
+
+    .category-header h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+
+    input, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .login-container {
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .button {
+        font-size: 14px;
+    }
+
+}
+
